@@ -9,8 +9,10 @@ extension Date {
     }
     
     func formattedDate() -> String {
-        
-        // TODO
-        return ""
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YY/MM/dd"
+        let dateString = dateFormatter.string(from: date)
+        return dateString
     }
 }
