@@ -3,16 +3,17 @@ import Foundation
 extension Date {
     
     func dateAfter(years: Int) -> Date? {
-     
-        // TODO
-        return nil
+        let calendar = Calendar.current
+        var dateComponents = DateComponents()
+        dateComponents.year = years
+        let futureDate = calendar.date(byAdding: .year, value: years, to: self)
+        return futureDate
     }
     
     func formattedDate() -> String {
-        let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YY/MM/dd"
-        let dateString = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let dateString = dateFormatter.string(from: self)
         return dateString
     }
 }
